@@ -590,9 +590,9 @@ jobs:
           
           skopeo copy --all docker://docker.io/${DHNS}/${REPOSITORY}:${CANDIDATE} docker://docker.io/${DHNS}/${REPOSITORY}:${VERSIONS}
           skopeo copy --all docker://docker.io/${DHNS}/${REPOSITORY}:${CANDIDATE} docker://docker.io/${DHNS}/${REPOSITORY}:${MAJOR_MINOR}
-          skopeo copy --all docker://docker.io/${DHNS}/${REPOSITORY}:${CANDIDATE} docker://ghcr.io/${GHCRNS}/${REPOSITORY}:${CANDIDATE}
-          skopeo copy --all docker://docker.io/${DHNS}/${REPOSITORY}:${CANDIDATE} docker://ghcr.io/${GHCRNS}/${REPOSITORY}:${VERSIONS}
-          skopeo copy --all docker://docker.io/${DHNS}/${REPOSITORY}:${CANDIDATE} docker://ghcr.io/${GHCRNS}/${REPOSITORY}:${MAJOR_MINOR}
+          skopeo sync --all docker://docker.io/${DHNS}/${REPOSITORY}:${CANDIDATE} docker://ghcr.io/${GHCRNS}/${REPOSITORY}:${CANDIDATE}
+          skopeo sync --all docker://docker.io/${DHNS}/${REPOSITORY}:${CANDIDATE} docker://ghcr.io/${GHCRNS}/${REPOSITORY}:${VERSIONS}
+          skopeo sync --all docker://docker.io/${DHNS}/${REPOSITORY}:${CANDIDATE} docker://ghcr.io/${GHCRNS}/${REPOSITORY}:${MAJOR_MINOR}
   git-tag:
     needs:
     - tags
