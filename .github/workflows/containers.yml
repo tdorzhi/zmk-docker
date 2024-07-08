@@ -545,6 +545,9 @@ jobs:
             echo "Tag not recognised, ignoring ..."
           fi
   releases:
+    permissions:
+      contents: read
+      packages: write
     needs:
       - architectures
       - tags
